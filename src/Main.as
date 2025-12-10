@@ -15,7 +15,7 @@ void Update(float dt) {
 }
 
 void RenderMenu() {
-    if (UI::MenuItem("\\$f70" + Icons::Registered + "\\$z Speed Splits", "", GUI::enabled)) {
+    if (UI::MenuItem("\\$f70" + Icons::Registered + "\\$z Speed Splits - Envimix Edition", "", GUI::enabled)) {
         GUI::enabled = !GUI::enabled;
     }
 }

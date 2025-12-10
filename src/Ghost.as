@@ -57,7 +57,7 @@ namespace Ghost {
         auto player = cast<CTrackManiaPlayer>(terminal.ControlledPlayer);
         int time = maxInt;
 
-        if (app.PlaygroundScript !is null) {
+        /* if (app.PlaygroundScript !is null) {
             auto records = app.PlaygroundScript.DataMgr.Records;
             // See https://github.com/Phlarx/tm-ultimate-medals/blob/76bf469aa3979c90b78a4ecb87c3a7423b635647/UltimateMedals.as#L581
             for (uint i = 0; i < records.Length; i++) {
@@ -70,7 +70,7 @@ namespace Ghost {
                 }
                 // this shouldn't loop more than a few times, since each entry is a different record type
             }
-        }
+        } */
 
         print("LOWEST TIME FROM SCRIPT: " + tostring(time));
         return time;
@@ -102,7 +102,7 @@ namespace Ghost {
             }
             print("LOWEST TIME FROM SCRIPT: " + tostring(time));
         }
-        return time;
+        return maxInt;
     }
 
 #endif

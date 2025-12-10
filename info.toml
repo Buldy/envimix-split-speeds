@@ -1,10 +1,10 @@
 [meta]
-name = "Split Speeds"
-author = "RuteNL"
+name = "Split Speeds - Envimix Edition"
+author = "RuteNL / Buldy"
 category = "Overlay"
-siteid = 145
-version = "2.2.0"
+version = "1.0"
 
 [script]
 dependencies = [ "VehicleState" ]
 exports = [ "src/Exports/SplitSpeedsExports.as" ]
+

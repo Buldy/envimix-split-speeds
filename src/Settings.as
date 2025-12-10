@@ -54,7 +54,7 @@ float anchorX = .501;
 float anchorXOnline = 0.4995;
 
 [Setting name="Anchor Y position" min=0 max=1 category="UI"]
-float anchorY = .251;
+float anchorY = .218;
 [Setting name="Online anchor Y position" min=0 max=1 category="UI"]
 float anchorYOnline = 0.677;
 

@@ -1,5 +1,6 @@
 namespace Map {
     string mapId = "";
+    string mapName = "";
     SpeedRecording@ pbRecord = null;
     SpeedRecording@ sessionRecord = null;
     SpeedRecording@ unfinishedRun = null;
@@ -19,7 +20,10 @@ namespace Map {
             return pb;
         }
 
-        @pbRecord = SpeedRecording::FromFile(FilePath);
+        mapName = GetApp().RootMap.MapName;
+
+        @pbRecord = SpeedRecording::FromFile(FilePath, mapName);
+
         if (pbRecord !is null) {
             // First try get PB from speedsplit file:
             pb = pbRecord.time;
@@ -101,13 +105,15 @@ namespace Map {
 
 #if TMNEXT || MP4
         auto currentMapId = GetApp().RootMap.MapInfo.MapUid;
+        auto currentMapName = GetApp().RootMap.MapName;
 #elif TURBO
         auto currentMapId = GetApp().Challenge.MapInfo.MapUid;
 #endif
-        if (mapId == currentMapId) return;
+        if (mapId == currentMapId && mapName == currentMapName) return;
 
         // Map switch
         mapId = currentMapId;
+        mapName = currentMapName;
 
         @currentRecord = null;
         @unfinishedRun = null;
@@ -115,7 +121,7 @@ namespace Map {
         currentPB = GetMapPB();
         sessionPB = 0;
         HandleRunStart();
-        print("Map switched to " + mapId + ", pb = " + currentPB);
+        print("Map switched to " + mapId + " / " + mapName + ", pb = " + currentPB);
     }
 
     void HandleRunStart() {
@@ -183,7 +189,7 @@ namespace Map {
 
         if (isPB) {
             currentPB = time;
-            currentRecord.ToFile(FilePath);
+            currentRecord.ToFile(FilePath, mapName);
             @pbRecord = currentRecord;
             @unfinishedRun = null;
         }

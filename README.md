@@ -1,3 +1,10 @@
+This plugin is based on the OpenPlanet plugin [Split Speeds](https://openplanet.dev/plugin/splitspeeds) by RuteNL. Changes were made so that you can save split speeds from **all cars** in the titlepacks _Nadeo Envimix_ and _Envimix Turbo_ (or any other MP4 envimix maps that differentiate by changing the MapName attribute). Tested in MP4, should in theory work in TM2020 and Turbo as well but it lacks a purpose.
+
+## **Original descriprion below**
+
+
+
+
 This plugin shows your current speed and your speed difference to your personal best at checkpoint splits, similar to how you can see your time and time difference to your PB in the base game.
 
 ## Configuration
